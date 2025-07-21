@@ -1,0 +1,25 @@
+@use "$lib/scss/config";
+
+.header {
+  display: grid;
+  grid-template-areas: "PageText Empty Nav";
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: config.$dark_secondary;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-radius: 4px;
+
+  .links {
+    grid-area: Nav;
+    display: flex;
+    gap: config.dclamp(12, 24);
+  }
+
+  .page_text {
+    grid-area: PageText;
+  }
+}

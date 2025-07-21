@@ -1,0 +1,103 @@
+@use "$lib/scss/config";
+
+.project_page {
+  display: grid;
+  width: 100%;
+  padding: 8px;
+  gap: 8px 24px;
+  grid-template-columns: 10fr 9fr;
+  grid-template-rows: 80px auto 40vh 40vh auto auto auto;
+  grid-template-areas: "Title Media"
+                       "Stack Media"
+                       "Description Media"
+                       "Features AdditionalInfo"
+                       "PreHistory AdditionalInfo"
+                       "Empty AdditionalInfo"
+                       "Roadmap Roadmap";
+
+  .title {
+    $border-radius-title: 6px;
+    $blackout-gradient: linear-gradient(90deg, #00000000 0%, #00000010 10%, #00000000 75%);
+
+    grid-area: Title;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    justify-content: left;
+    margin: 4px 0;
+    border-radius: $border-radius-title;
+
+    @include config.gradient-blackout($border-radius-title, $blackout-gradient);
+
+    img {
+      height: 100%;
+      display: inline;
+      z-index: 2;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      display: inline;
+      font-size: config.dclamp(36, 40);
+
+      @include config.text-shadow();
+    }
+  }
+
+  .project_stack {
+    grid-area: Stack;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .dev_badge {
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: #ffffff0b;
+      list-style: none;
+      font-size: config.dclamp(14, 16);
+      font-weight: 340;
+      color: #2ac8ff;
+      font-family: monospace;
+    }
+
+    .stack_list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-start;
+      align-items: start;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 6px 12px;
+        border-radius: 6px;
+        background: #ffffff0b;
+        list-style: none;
+
+        &:hover {
+          background: #ffffff10;
+        }
+
+        code {
+          font-size: config.dclamp(14, 16);
+          color: limegreen;
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  iframe {
+    width: 99%;
+    height: 99%;
+    grid-area: Media;
+
+    @include config.border-gradient(2px, 12px)
+  }
+}

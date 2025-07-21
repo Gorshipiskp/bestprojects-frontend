@@ -1,0 +1,53 @@
+@use "$lib/scss/config";
+
+.tabs_wrapper {
+  grid-area: Media;
+  padding: 4px 12px 0 0;
+  height: 100%;
+  display: grid;
+  grid-template-areas: "Tabs"
+                       "TabContent";
+  grid-template-rows: 30px auto;
+
+  .tabs_headers {
+    grid-area: Tabs;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 4px;
+
+    .tab {
+      border: 0;
+      padding: 8px 12px;
+      cursor: pointer;
+
+      transition: 0.1s;
+
+      span {
+        color: #ddd;
+        font-size: config.dclamp(13, 15);
+      }
+    }
+
+    .tab_active {
+      background: config.$grey_secondary;
+      border-radius: 12px 12px 0 0;
+    }
+
+    .tab_inactive {
+      background: config.$dark_secondary;
+      border-radius: 6px 6px 0 0;
+    }
+  }
+
+  .tabs_content {
+    grid-area: TabContent;
+    padding: 6px;
+    border-radius: 0 12px 12px 12px;
+    background: config.$grey_secondary;
+
+    .content_wrapper {
+      height: 100%;
+    }
+  }
+}

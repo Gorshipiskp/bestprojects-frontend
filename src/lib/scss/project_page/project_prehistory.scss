@@ -1,0 +1,17 @@
+@use "$lib/scss/config";
+
+.prehistory {
+  grid-area: PreHistory;
+
+  @include config.custom-scrollbar();
+  @include config.project-page-block();
+
+  p {
+    margin: 8px 0 0 12px;
+    line-height: 1.2;
+
+    &:nth-of-type(1) {
+      margin-top: 12px;
+    }
+  }
+}

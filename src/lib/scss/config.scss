@@ -1,0 +1,138 @@
+@use "sass:math";
+@use "sass:string";
+
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+
+$text_color: #e8e8e8;
+$text_color_secondary: #e9e9e9;
+
+$text_font: "Bahnschrift";
+
+$dark: #121212;
+$dark_secondary: #232323;
+$grey_secondary: #2c2c2c;
+
+$b_accent: #00bfff;
+$b_accent_hover: #1ac4ff;
+
+$r_accent: #ff4c4c;
+$r_accent_hover: #ff6b6b;
+
+$sep_color: #2a2a2a;
+
+$d_max: 1920;
+$d_min: 950;
+$d_diff: $d_max - $d_min;
+
+* {
+  box-sizing: border-box;
+}
+
+@function dclamp($min, $max, $unit: px, $viewport-min: $d_min, $viewport-max: $d_max, $cur-value: 100vw) {
+  @if $unit == fr {
+    @error "fr не поддерживается внутри calc(). Используй только px, vw, vh, rem";
+  }
+
+  $viewport-diff: $viewport-max - $viewport-min;
+  $value-diff: $max - $min;
+
+  $cur_diff: "#{$cur-value} - #{$viewport-min}#{$unit}";
+  $formula: "#{$min}#{$unit} + (#{$value-diff}) * (#{$cur_diff}) / #{$viewport-diff}";
+
+  @return clamp(#{$min}#{$unit}, calc(#{$formula}), #{$max}#{$unit});
+}
+
+@mixin custom-scrollbar() {
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 12px;
+  }
+}
+
+@mixin gradient-blackout($black-border-radius: 0, $gradient: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.15) 90%)) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $gradient;
+    border-radius: $black-border-radius;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+@mixin text-shadow($strongness: 0.2) {
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, $strongness);
+}
+
+@mixin border-gradient($width, $border-radius, $gradient: #00000000) {
+  border: $width solid transparent;
+  border-radius: $border-radius;
+  background-image: linear-gradient(white, white), $gradient;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+@mixin project-page-block() {
+  overflow: auto;
+  margin-top: 4px;
+
+  @include border-gradient(3px, 8px);
+
+  padding: 0;
+  border-radius: 8px;
+
+  h2 {
+    font-size: dclamp(32, 36);
+    margin: 0;
+    padding: 6px 0 4px 12px;
+    border-radius: 0 6px 6px 0;
+
+    @include text-shadow(0.35);
+  }
+
+  div {
+    padding-bottom: 4px;
+
+    &:nth-of-type(1) {
+      h3 {
+        margin-top: 4px;
+      }
+    }
+
+    h3 {
+      font-size: dclamp(22, 24);
+      margin: 0 0 8px 0;
+      padding: 6px 0 4px 12px;
+      border-radius: 0 6px 6px 0;
+      background: #00000044;
+
+      @include text-shadow(0.4);
+    }
+  }
+
+  p {
+    padding: 0 6px 4px 0;
+    font-size: dclamp(14, 16);
+    margin: 4px 0 0 12px;
+    line-height: 1.3;
+    word-spacing: -1px;
+    font-weight: 300;
+  }
+}

@@ -1,0 +1,8 @@
+@use "$lib/scss/config";
+
+.description {
+  grid-area: Description;
+
+  @include config.custom-scrollbar();
+  @include config.project-page-block();
+}

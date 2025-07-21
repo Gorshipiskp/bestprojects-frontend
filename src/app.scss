@@ -1,0 +1,15 @@
+@use "$lib/scss/config.scss";
+
+body {
+  background: config.$dark;
+}
+
+span, h1, h2, h3, h4, h5, h6, p, a {
+  color: config.$text_color;
+  font-family: config.$text_font;
+}
+
+figcaption {
+  color: config.$text_color_secondary;
+  font-family: config.$text_font;
+}

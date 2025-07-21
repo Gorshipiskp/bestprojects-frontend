@@ -1,0 +1,36 @@
+@use "$lib/scss/config";
+
+.tags {
+  grid-area: Tags;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 8px;
+  padding: 6px 16px;
+
+  .tag_title {
+    font-size: config.dclamp(24, 26);
+    font-weight: 800;
+    background: #161616;
+    padding: 6px 16px;
+    margin: 0;
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  .tags_badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    .tag_badge {
+      font-size: config.dclamp(16, 18);
+      background: #161616;
+      padding: 6px 16px;
+      margin: 0 0 6px 0;
+      border-radius: 6px;
+      text-align: center;
+      color: #ababab;
+    }
+  }
+}

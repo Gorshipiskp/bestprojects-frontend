@@ -1,0 +1,67 @@
+@use "$lib/scss/config";
+
+
+.additional_info_content {
+  grid-area: AdditionalInfo;
+  display: grid;
+  gap: 12px;
+
+  @include config.project-page-block();
+
+  grid-template-areas: "Title Title"
+                       "Technologies Technologies"
+                       "SmallInfo SmallInfo"
+                       "Tags Tags";
+  grid-template-rows: 51px auto 1fr;
+  grid-template-columns: auto auto;
+  align-items: start;
+
+  h2 {
+    grid-area: Title;
+  }
+
+  .project_technologies {
+    grid-area: Technologies;
+    display: grid;
+    grid-template-areas: "Backend Infrastructure"
+                         "Frontend Design";
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 6px 16px
+  }
+
+  .small_tech_info {
+    grid-area: SmallInfo;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: baseline;
+    gap: 16px 8px;
+    padding: 6px 16px;
+    box-sizing: content-box;
+
+    .small_info_field {
+      border-radius: 6px;
+      padding: 0;
+
+      h3 {
+        background: #161616;
+        padding: 6px 16px;
+        margin: 0 0 6px 0;
+        border-radius: 6px;
+        text-align: center;
+      }
+
+      div {
+        background: #161616;
+        padding: 6px 12px;
+        text-align: center;
+        border-radius: 6px;
+
+        .info_field, .info_field span {
+          font-size: config.dclamp(14, 16);
+          color: #ababab;
+        }
+      }
+    }
+  }
+}

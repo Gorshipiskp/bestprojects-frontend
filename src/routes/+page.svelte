@@ -3,7 +3,7 @@
     import type {ProjectInfoType} from "../lib/codelib/types";
     import ProjectCard from "../lib/widgets/ProjectCard.svelte";
     import "../lib/scss/projects.scss";
-    import {PROJECTS} from "../lib/mainInfo";
+    import {PROJECTS} from "../lib/main_info";
 
     function filterProjectBy<T extends keyof ProjectInfoType, U extends ProjectInfoType[T]>(
         tag: T,

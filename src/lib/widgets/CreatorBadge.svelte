@@ -1,6 +1,6 @@
 <script lang="ts">
     import type {PersonType} from "../codelib/types";
-    import {PEOPLE} from "../mainInfo";
+    import {PEOPLE} from "../main_info";
     import "$lib/scss/widgets/creator_badge.scss";
 
     export let creator: string = "";

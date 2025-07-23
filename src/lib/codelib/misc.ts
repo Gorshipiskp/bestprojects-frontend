@@ -1,4 +1,4 @@
-import {PROJECTS} from "../mainInfo";
+import {PROJECTS} from "../main_info";
 import type {ProjectGradientType, ProjectInfoType, RGB} from "./types";
 
 export type MarkupType = "code" | "project_reference" | "italic" | "text"

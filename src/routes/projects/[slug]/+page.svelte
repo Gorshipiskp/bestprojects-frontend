@@ -1,6 +1,6 @@
 <script lang="ts">
     import type {ProjectImageType, ProjectInfoType, ProjectTagsDevelopmentType, RGB} from "../../../lib/codelib/types";
-    import {PROJECTS} from "../../../lib/mainInfo";
+    import {PROJECTS} from "../../../lib/main_info";
     import "$lib/scss/project_page.scss";
     import Description from "../../../lib/widgets/project_page/ProjectDescription.svelte";
     import {constructProjectGradient} from "../../../lib/codelib/misc";
@@ -49,6 +49,7 @@
             const iframe: HTMLIFrameElement = document.createElement("iframe")
 
             iframe.src = curInfo.website_link as string
+            iframe.sandbox = "allow-scripts allow-same-origin"
             iframe.style.backgroundImage = fullGradient
             iframe.title = `Демонстрация ${curInfo.display_name} в iframe`
 

@@ -4,7 +4,6 @@
 
     export let title: string;
     export let technologies: string[];
-
 </script>
 
 <div style="grid-area: {title}" class="technologies_block">

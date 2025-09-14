@@ -1,8 +1,8 @@
-<!--suppress CommaExpressionJS -->
 <script lang="ts">
     import type {MarkedUpTextType} from "../codelib/misc";
     import {markupText} from "../codelib/misc";
     import "$lib/scss/widgets/markedup_text.scss";
+    import {curProject} from "../codelib/stores";
 
     export let textToMarkup: string | string[] = "";
     export let defaultTextTag: "code" | "span" = "span";
@@ -18,9 +18,19 @@
     {#if type === "code"}
         <code class="markup_code">{wrappedText}</code>
     {:else if type === "project_reference"}
-        {wrap[0]}<a href="/projects/{text}" target="_blank">
-            <code>{text}</code>
-        </a>{wrap[1]}
+        {@const isCurProject = wrappedText.toLowerCase() === $curProject.toLowerCase()}
+
+        {wrap[0]}
+        {#if isCurProject}
+            <a style="text-decoration: underline" target="_blank">
+                <code>{text}</code>
+            </a>
+        {:else}
+            <a href={`/projects/${text}`} target="_blank">
+                <code>{text}</code>
+            </a>
+        {/if}
+        {wrap[1]}
     {:else if type === "italic"}
         <i>{wrappedText}</i>
     {:else if type === "text"}

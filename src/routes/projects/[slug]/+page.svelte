@@ -62,7 +62,6 @@
         if (curInfo.media?.images) {
             curTabs["Фотки"] = createImgDiv()
         }
-
         // todo: Добавить видео
     })
 

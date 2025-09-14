@@ -17,7 +17,7 @@ export const PEOPLE: PeopleType = {
 
 // `...` - Мелкий код
 // //...// - Курсив
-// {НАЗВАНИЕ_ПРОЕКТА} - Автоматически делает ссылку на страницу проекта
+// НАЗВАНИЕ_ПРОЕКТА - Автоматически делает ссылку на страницу проекта
 
 export const PROJECTS: ProjectsInfoType = {
     "bestaccounts": {
@@ -190,7 +190,7 @@ export const PROJECTS: ProjectsInfoType = {
             "logo": "logo512.png",
         },
         "gradient": [[225, 40, 30], [215, 150, 20]],
-        "description_short": "Моя надёжная система учётных записей с солёным и перчёным хэшированием, шифрованием и JWT. Один аккаунт используется в качестве для автоматического входа на любой другой мой проект.",
+        "description_short": "Моя надёжная система учётных записей с солёным и перчёным хэшированием, шифрованием и JWT. Один аккаунт используется в качестве автоматического входа на любой другой мой проект.",
         "description": {
             "Основное": [
                 "В основе проекта лежат `Svelte`, `FastAPI` и `MySQL`. Пользователь может зарегистрировать аккаунт и затем использовать его на всех моих других сервисах."
@@ -378,7 +378,7 @@ export const PROJECTS: ProjectsInfoType = {
             "logo": "Logo_512x.png",
         },
         "gradient": [[200, 35, 35], [195, 50, 30]],
-        "description_short": "Бесплатное хранилище неограниченного количества файлов с удобным интерфейсом и возможностями деления файлами с друзьями.",
+        "description_short": "Бесплатное хранилище неограниченного количества файлов с удобным интерфейсом и возможностями деления файлами с другими пользователями.",
         "description": {
             "Основное": [
                 "Создан с помощью `Svelte`, `FastAPI` и `MySQL`. После регистрации на BestAccounts пользователь может зайти на этот проект и с удобством загрузить сколько ему угодно файлов."
@@ -420,6 +420,9 @@ export const PROJECTS: ProjectsInfoType = {
         "stack": [
             "Python",
             "FastAPI",
+            "Natasha",
+            "Svelte",
+            "TypeScript",
             "MySQL"
         ],
         "technologies": {
@@ -428,7 +431,9 @@ export const PROJECTS: ProjectsInfoType = {
                 "hashlib",
                 "Pydantic",
                 "MySQL",
-                "Sqlite3"
+                "OCR",
+                "Natasha",
+                "RapidFuzz"
             ],
             "frontend": [
                 "PWA",
@@ -436,8 +441,9 @@ export const PROJECTS: ProjectsInfoType = {
                 "Vite",
                 "Svelte-Routing",
                 "dexie",
-                "object-sizeof",
-                "FuzzySearch"
+                "LocalStorage",
+                "Decimal.js",
+                "FuzzySearch",
             ],
             "design": [
                 "SCSS",
@@ -452,20 +458,82 @@ export const PROJECTS: ProjectsInfoType = {
         },
         "website_link": "https://bestsupport-frontend-2.vercel.app/",
         "github_link": false,
-        "release_year": false,
-        "solo_project": true,
-        "other_creators": [],
-        "tags": [
-            "Beta",
-            "WIP"
-        ],
-        "tags_development": [],
-        "features": {},
-        "license": "",
+        "release_year": 2023,
+        "close_year": false,
+        "creators": [],
+        "tags": ["Математический движок", "CAS", "Практическая польза", "Оффлайн", "LaTeX", "EdTech", "OCR", "NLP"],
+        "features": {
+            "jwt_tokens": {
+                "featureName": "JWT-токены и refresh-механизм",
+                "description": [
+                    "Потребность в безопасном и проверенном способе входа в аккаунт и хранения данных об авторизации.",
+                    "`JWT` был выбран как наиболее подходящий и удобный вариант."
+                ]
+            },
+        },
+        "license": "Private",
+        "tag_development": "In Progress",
         "size": "Main",
-        "using": "",
+        "using": "Нет пользователей (ввиду разработки)",
         "roadmap": {
-            "2025.09": []
+            "2022": [
+                ["Начало создания на Flask (с шаблонизатором)", true],
+                ["Создание простейших страниц с формулами", true],
+                ["Создание системы уведомлений", true],
+                ["Создание синтаксиса формул", true],
+                ["Использование LaTeX", true],
+            ],
+            "2023": [
+                ["Создание страницы с формулами", true],
+                ["Создание логотипа", true],
+                ["Добавление i18n", true],
+                ["PWA-ready", true],
+                ["Добавление программы-решателя задач с 'Дано' и 'Найти'", true],
+                ["Переход на SCSS", true],
+                ["UI-улучшения (в том числе мобильный вид)", true],
+                ["Добавление справочника переменных и констант", true],
+                ["Добавление тестовых 50 формул (+переменные и константы)", true],
+                ["Добавление настроек", true],
+                ["Создание парсера формул", true],
+                ["Переход с Flask на Django и React", true],
+                ["Перепись проекта с нуля", true],
+                ["Обновление синтаксиса формул", true],
+            ],
+            "2024": [
+                ["Переход с React и Django на Svelte (TypeScript) и FastAPI", true],
+                ["Добавление программы биологического скрещивания", true],
+                ["Добавление справочника (ЕГЭ по русскому, алгебра и тригонометрия)", true],
+                ["Обновление математической системы", true],
+                ["Слияние бэкенда BestSupport с бэкендом BestAccounts", true],
+                ["Реализация польской нотации для синтаксиса формул", true],
+                ["Перепись парсера формул", true],
+                ["UI-улучшения", true],
+                ["Внедрение SympyJS", true],
+                ["Перепись парсера формул", true],
+                ["Отказ от SympyJS", true],
+            ],
+            "2025": [
+                ["Написание с нуля парсера формул (полный цикл обработки формул)", true],
+                ["Своя CAS с ООП", true],
+                ["Внедрение Decimal.js", true],
+                ["MVP системы распознавания и решения физических задач (PhotoSolver)", true],
+                ["Новая система хранения переменных (учёт контекста и смысловых групп)", false],
+                ["Новая версия алгоритма решения задач", false],
+            ],
+            "Будущее": [
+                ["Упрощение выражений, раскрытие скобок и т.д.", false],
+                ["Решение различных типов уравнений", false],
+                ["Решение тригонометрических задач (в том числе с параметрами)", false],
+                ["Взятие производных и интегралов", false],
+                ["Финальная перепись парсера", false],
+                ["Релиз", false],
+                ["Внедрение функции 'PhotoSolver'", false],
+                ["Монетизация по модели Freemium", false],
+                ["Программы по информатике, химии и т.п.", false],
+                ["Полная интернационализация", false],
+                ["Пользовательские формулы и переменные", false],
+                ["Создание приложения", false]
+            ]
         },
         "monetized": "Planned",
         "media": {
@@ -498,12 +566,11 @@ export const PROJECTS: ProjectsInfoType = {
         "release_year": 2021,
         "close_year": 2022,
         "solo_project": true,
-        "other_creators": [],
+        "creators": [],
         "tags": [
             "WIP",
             "Old"
         ],
-        "tags_development": [],
         "license": "",
         "size": "Big",
         "using": "",
@@ -537,12 +604,11 @@ export const PROJECTS: ProjectsInfoType = {
         "release_year": 2021,
         "close_year": 2022,
         "solo_project": true,
-        "other_creators": [],
+        "creators": [],
         "tags": [
             "WIP",
             "Old"
         ],
-        "tags_development": [],
         "license": "",
         "size": "Medium",
         "using": "",
@@ -576,11 +642,10 @@ export const PROJECTS: ProjectsInfoType = {
         "release_year": 2024,
         "close_year": false,
         "solo_project": true,
-        "other_creators": [],
+        "creators": [],
         "tags": [
             "WIP"
         ],
-        "tags_development": [],
         "license": "",
         "size": "Small",
         "using": "",

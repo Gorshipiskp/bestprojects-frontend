@@ -21,6 +21,8 @@
     let projectsFirsts: ProjectInfoType[] = filterProjectBy("size", "Firsts");
 </script>
 
+<!-- todo: Добавить примечание по типу: "Если вы работодатель, то проекты ниже не так важны, как верхние" -->
+
 <div class="main_content_projects">
     <div class="main_projects">
         {#each projectsMain as project (project.name)}

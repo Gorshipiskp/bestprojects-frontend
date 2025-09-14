@@ -9,7 +9,8 @@
     const monetizing: Record<MonetizeType, string> = {
         "No": "Не присутствует",
         "Yes": "Имеется",
-        "Planned": "Планируется"
+        "Planned": "Планируется",
+        "Freemium": "Freemium",
     }
 </script>
 
@@ -46,7 +47,9 @@
         {/if}
     </SmallInfoField>
     <SmallInfoField title="Использование">
-        <span class="info_field"><MarkedUpText textToMarkup={projectInfo.using}/></span>
+        <span class="info_field">
+            <MarkedUpText textToMarkup={projectInfo.using}/>
+        </span>
     </SmallInfoField>
     <SmallInfoField title="Монетизация">
         <span class="info_field">{monetizing[projectInfo.monetized]}</span>

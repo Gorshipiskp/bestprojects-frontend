@@ -7,7 +7,7 @@ export type RGB = [R: number, G: number, B: number]
 export type ProjectGradientType = [from: RGB, to: RGB]
 export type ProjectImageType = { src: string, description: string }
 export type DescriptionType = Record<string, string[]>
-export type LicenseType = "MIT" | "Apache 2.0" | "LGPL" | "GNU GPL" | "CC0" | "Private"
+export type LicenseType = "MIT" | "Apache 2.0" | "LGPL" | "GNU GPL" | "CC0" | "Private" | "Unlicensed"
 export type MonetizeType = "No" | "Yes" | "Planned" | "Freemium"
 
 export type PersonType = { name: string, description: string, links?: Record<string, string>, avatar?: string }
@@ -17,6 +17,7 @@ export type PeopleType = Record<string, PersonType>
 
 export type ProjectInfoType = {
     name: string,
+    available: boolean,
     display_name: string,
     stack: string[],
     technologies?: {

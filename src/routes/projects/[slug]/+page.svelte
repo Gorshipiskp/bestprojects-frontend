@@ -83,6 +83,15 @@
             <p>Такого проекта не существует</p>
         </div>
     </div>
+{:else if !curInfo.available}
+    <div class="project_page_sorry">
+        <div class="sorry_title">
+            <h1>Эххх, жаль(</h1>
+        </div>
+        <div class="sorry_description">
+            <p>Описание проекта ещё пишется, но в скором времени <u>{curInfo.display_name}</u> точно появится!</p>
+        </div>
+    </div>
 {:else}
     <div class="project_page">
         <div class="title" style="background: {gradient}">

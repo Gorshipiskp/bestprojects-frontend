@@ -6,7 +6,7 @@ export type MarkableType = Exclude<MarkupType, "text">
 export type MarkedUpTextType = { text: string, type: MarkupType }[]
 export type MarkableRegexesUpInfo = [regex: RegExp, toReplace: string | false]
 
-const projectsNames: string[] = Object.values(PROJECTS).flatMap((project: ProjectInfoType) => [project.display_name, project.name])
+const projectsNames: string[] = Object.values(PROJECTS).flatMap((project: ProjectInfoType) : [string, string] => [project.display_name, project.name])
 
 export const DEFAULT_GRADIENT: ProjectGradientType = [[0, 0, 0], [255, 255, 255]]
 
@@ -62,6 +62,6 @@ export function markupText(text: string): MarkedUpTextType {
 }
 
 export function constructProjectGradient(projectGradient: ProjectGradientType | undefined, deg: number = 200): string {
-    const [[rf, gf, bf], [rt, gt, bt]]: [RGB, RGB] = projectGradient || DEFAULT_GRADIENT
+    const [[rf, gf, bf], [rt, gt, bt]]: [RGB, RGB] = projectGradient ?? DEFAULT_GRADIENT
     return `linear-gradient(${deg}deg, rgb(${rf}, ${gf}, ${bf}), rgb(${rt}, ${gt}, ${bt}))`
 }
